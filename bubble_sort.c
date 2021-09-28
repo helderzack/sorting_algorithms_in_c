@@ -2,21 +2,21 @@
 #include <stdlib.h>
 
 int* bubbleSort(int array[], int last) {
-  int flag = 0;
+  int swaps;
 
-  while(flag == 0 || last > 0) {
-    flag = 1;
+  do {
+    swaps = 0;
     int i;
     for(i = 0; i < last - 1; i++) {
       if (array[i] > array[i + 1]) {
         int temp = array[i];
         array[i] = array[i + 1];
         array[i + 1] = temp;
-        flag = 0;
+        swaps++;
       }
     }
     last--;
-  }
+  } while(swaps > 0);
 
   return array;
 }
